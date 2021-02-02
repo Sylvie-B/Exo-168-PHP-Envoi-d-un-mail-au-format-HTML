@@ -9,7 +9,7 @@
 
 $to = [
     'j.conan@fondationface.org',
-    ...
+    'unsolo@hotmail.fr'
 ];
 
 $html = '
@@ -20,8 +20,19 @@ $html = '
         <body>
             <div>
                 <!-- Vos actualités ici -->
+                Nous sommes le mardi 02 fevrier 2021, ce soir je fais des crêpes pour ma chandeleur.
             </div>
         </body>
     </html>
 ';
 
+$subject = 'actualités';
+
+$headers = [
+    'Reply-To' => 'jojo@outlook.fr',
+    'X-Mailer' => 'PHP/'.phpversion(),
+    'Mime-Version' => '1.0',
+    'Content-type' => 'text/html; charset=utf-8'
+];
+
+mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
