@@ -17,7 +17,7 @@ $html = '
         <body>
             <div>
                 <!-- Vos actualités ici -->
-                Nous sommes le mardi 02 fevrier 2021, ce soir je fais des crêpes pour ma chandeleur.
+                Nous sommes le mardi 02 fevrier 2021, ce soir je fais des crêpes pour la chandeleur.
             </div>
         </body>
     </html>
@@ -32,4 +32,11 @@ $headers = [
     'Content-type' => 'text/html; charset=utf-8'
 ];
 
-mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
+$send = mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
+
+if($send){
+    echo 'Le message a bien été envoyé.';
+}
+else{
+    echo 'une erreur est survenue.';
+}
