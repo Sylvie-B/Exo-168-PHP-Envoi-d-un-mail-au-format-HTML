@@ -7,10 +7,7 @@
  *    ex: ['j.conan@fondationface.org' => true, 'toto@fondationface.org' => false] => à vous de trouver la suite !
  */
 
-$to = [
-    'j.conan@fondationface.org',
-    'unsolo@hotmail.fr'
-];
+$to = 'j.conan@fondationface.org, unsolo@hotmail.fr';
 
 $html = '
     <html lang="fr">
