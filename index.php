@@ -7,7 +7,10 @@
  *    ex: ['j.conan@fondationface.org' => true, 'toto@fondationface.org' => false] => à vous de trouver la suite !
  */
 
-$to = 'j.conan@fondationface.org, unsolo@hotmail.fr';
+$toAll = [
+    'j.conan@fondationface.org',
+    'unsolo@hotmail.fr',
+];
 
 $html = '
     <html lang="fr">
@@ -32,11 +35,13 @@ $headers = [
     'Content-type' => 'text/html; charset=utf-8'
 ];
 
-$send = mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
+foreach ($toAll as $to){
+    $send = mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
+    if($send){
+        echo "Le message a bien été envoyé à $to";
+    }
+    else{
+        echo "Le message à $to n'a pas été envoyé";
+    }
+}
 
-if($send){
-    echo 'Le message a bien été envoyé.';
-}
-else{
-    echo 'une erreur est survenue.';
-}
