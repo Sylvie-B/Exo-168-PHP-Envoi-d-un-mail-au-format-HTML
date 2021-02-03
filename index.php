@@ -8,8 +8,8 @@
  */
 
 $toAll = [
-    'j.conan@fondationface.org',
-    'unsolo@hotmail.fr',
+    'bidul@chose.com',
+    'machine@truc.fr',
 ];
 
 $html = '
@@ -38,10 +38,10 @@ $headers = [
 foreach ($toAll as $to){
     $send = mail($to, $subject, $html, $headers, '-f jojo@outlook.fr');
     if($send){
-        echo "Le message a bien été envoyé à $to";
+        echo "Le message a bien été envoyé à $to <br>";
     }
     else{
-        echo "Le message à $to n'a pas été envoyé";
+        echo "Le message à $to n'a pas été envoyé <br>";
     }
 }
 
